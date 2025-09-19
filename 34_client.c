@@ -1,7 +1,8 @@
 /*===========================================================================================
- * Name: 33_client.c
+ * Name: 34.c
  * Author : Adithi.P
- * Description :  Write a program to communicate between two machines using socket(client)
+ * Description :  Write a program to create a concurrent server.
+                   Client Part of the Programs
  * Date : 14th September,2025
  * ========================================================================================*/
 #include<stdio.h>
@@ -13,7 +14,7 @@
 
 int main(){
          printf("The client  program started \n");
-	struct sockaddr_in serv;
+        struct sockaddr_in serv;
         int sd;
         char buf[80];
         sd = socket(AF_INET,SOCK_STREAM,0);
@@ -21,14 +22,7 @@ int main(){
         serv.sin_addr.s_addr=INADDR_ANY;
         serv.sin_port=htons(8080);
         connect(sd,(void *)(&serv),sizeof(serv));
-	write(sd,"Hello Server \n",14);
-	sleep(5);
+        write(sd,"Hello Server \n",14);
         read(sd,buf,sizeof(buf));
         printf("Msg from server : %s \n",buf);
 }
-/*====================================================================================
- * output :
- * adithi@DESKTOP-B2HISG8:~/handson_2$ cc 33_client.c -o client.out
-adithi@DESKTOP-B2HISG8:~/handson_2$ ./client.out
-The client  program started
-Msg from server : ACK from the Server */

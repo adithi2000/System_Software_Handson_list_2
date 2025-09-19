@@ -1,24 +1,38 @@
+/*===========================================================================================
+ * Name: 33.c
+ * Author : Adithi.P
+ * Description :  Write a program to communicate between two machines using socket(server)
+ * Date : 14th September,2025
+ * ========================================================================================*/
 #include<stdio.h>
 #include<sys/socket.h>
 #include<netinet/in.h>
 #include<fcntl.h>
 #include<stdio.h>
 #include<unistd.h>
-
+#include<stdlib.h>
 int main()
 {
 	printf("The server program started \n");
 	struct sockaddr_in serv,cli;
 	int sd,sz,nsd;
 	char buf[80];
-	sd = socket(AF_UNIX,SOCK_STREAM,0);
-	serv.sin_family=AF_UNIX;
+	sd = socket(AF_INET,SOCK_STREAM,0);
+	//serv.sin_family=AF_UNIX;
+	serv.sin_family=AF_INET;
 	serv.sin_addr.s_addr=INADDR_ANY;
 	serv.sin_port=htons(8080);
 	bind(sd,(void *)(&serv),sizeof(serv));
 	listen(sd,5);
 	sz=sizeof(cli);
 	nsd=accept(sd,(void *)(&cli),&sz);
+	if(nsd > 0){
+		printf("client connected \n");
+	}
+	else{
+		printf("Client not connected \n");
+		exit(0);
+	}
 	read(nsd,buf,sizeof(buf));
 	printf("Msg from client : %s \n",buf);
 	write(nsd,"ACK from the Server \n",21);

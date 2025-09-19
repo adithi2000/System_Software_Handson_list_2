@@ -1,0 +1,20 @@
+adithi@DESKTOP-B2HISG8:~/handson_2$ ./32a_write
+Select train number :
+1
+Write Lock will be implemented
+before entering CS
+In CS
+Train number entered 1
+Initial ticket count 2
+New ticket count will be 3
+To book the ticket press Enter
+
+adithi@DESKTOP-B2HISG8:~/handson_2$ ./32a_read
+Select train number :
+1
+before entering CS
+Read Lock will be implemented
+In CS
+Train number entered 1
+ticket count 2
+Finish Read
