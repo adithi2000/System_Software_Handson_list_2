@@ -20,7 +20,7 @@ int main(){
         sd = socket(AF_INET,SOCK_STREAM,0);
         serv.sin_family=AF_INET;
         serv.sin_addr.s_addr=INADDR_ANY;
-        serv.sin_port=htons(8080);
+        serv.sin_port=htons(8084);
         connect(sd,(void *)(&serv),sizeof(serv));
         write(sd,"Hello Server \n",14);
         read(sd,buf,sizeof(buf));

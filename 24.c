@@ -1,7 +1,7 @@
 /*==============================================================================
  * Name:24.c
  * Author : Adithi P
- * Description : 
+ * Description :  Write a program to create a message queue and print the key and message queue id. 
  * date : 17th September,2025
  * =============================================================================*/
 #include <sys/msg.h>

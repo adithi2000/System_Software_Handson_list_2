@@ -1,4 +1,5 @@
-/*==============================================================Name:22.c
+/*==============================================================
+ * Name:22.c
  * Author : Adithi P
  * Description :  Write a program to wait for data to be written into FIFO within 10 seconds, use select 
 system call with FIFO. 
