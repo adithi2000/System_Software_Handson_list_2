@@ -15,6 +15,7 @@
 
 int main(void){
 int msgid,size; 
+	key_t key;
 	struct msg {                                                                                                                           struct msg {
         long int mtype;
         char message[80];
