@@ -14,7 +14,8 @@
 #include <unistd.h>
 
 int main(void){
-int msgid,size;                                                                                                                      key_t key;                                                                                                                           struct msg {
+int msgid,size; 
+	struct msg {                                                                                                                           struct msg {
         long int mtype;
         char message[80];
 }myq;                                                                                                                                                                                                                                                                     key=ftok(".",'a');                                                                                                                   msgid=msgget(key,0);
